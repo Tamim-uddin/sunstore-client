@@ -7,18 +7,18 @@ import './Products.css';
 const Products = () => {
     const [products, setproducts] = useState([]);
     useEffect( () => {
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
         .then(res => res.json())
         .then(data => setproducts(data))
     } , [])
     return (
         <div>
              <Typography variant="h3" gutterBottom component="div" sx={{ mt: '50px'}}>
-                    Our special Products {products.length}
+                    Special Offers and Promotion
             </Typography>
             <Grid container spacing={2}>
                 {
-                   products.map(product => <Product key={product.id} product={product}></Product>)
+                   products.map(product => <Product key={product._id} product={product}></Product>)
                 }
             </Grid>
         </div>

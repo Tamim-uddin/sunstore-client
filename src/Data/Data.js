@@ -70,3 +70,25 @@ const products = [
         des: 'Claire Goldsmith is the great-granddaughter of Oliver Goldsmith, one of the most influential designers and creators of modern day eyewear and the man '
     }
 ]
+
+
+const reviews = [
+    {
+        name: 'Jack Wiillaw',
+        email: 'jackwillaw@gmail.com',
+        des: 'This is the best glasses webside i have ever seen'
+
+    },
+    {
+        name: 'Arya Starck',
+        email: 'aryastarck@gmail.com',
+        des: 'Oh! best website for glusses, You can visit it'
+
+    },
+    {
+        name: 'Sansa Akani',
+        email: 'sansaakani@gmail.com',
+        des: 'You will find every type of glusses here'
+
+    }
+]

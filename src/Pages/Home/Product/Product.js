@@ -1,11 +1,20 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Button, Card, CardContent, Container, Typography } from '@mui/material';
+import useAuth from '../../../hook/useAuth';
+import BookingModal from '../../Shared/BookingModal/BookingModal';
+import { NavLink } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {id, name, des, price, img} = product;
+    const {name, des, price, img} = product;
+    const {user} = useAuth();
+    const [openBooking, setOpenBooking] = React.useState(false);
+    const handleBookingOpen = () => setOpenBooking(true);
+    const handleBookingClose = () => setOpenBooking(false);
+
   return (
    
+    <>
      <Grid item xs={6} md={4}>
      <Container >
                     <Card sx={{ minWidth: 275, p: 2 }}>
@@ -21,10 +30,18 @@ const Product = ({product}) => {
                           {des}                        
                         </Typography>
                         </CardContent>
-                        <Button variant="contained">Add to Cart</Button>                    
+                        {user?.email ?
+                        <Button onClick={handleBookingOpen} variant="contained">Add to Cart</Button> :                   
+                        <NavLink to="/login"><Button  variant="contained">Add to Cart</Button></NavLink>}                   
                     </Card>
             </Container>
         </Grid>
+        <BookingModal
+        openBooking={openBooking}
+        handleBookingClose={handleBookingClose}
+        product={product}>
+        </BookingModal>
+        </>
     
   );
 };
