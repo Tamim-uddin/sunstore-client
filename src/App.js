@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from "./contexts/AuthProvider";
 import Addproducts from "./Pages/Dashboard/Addproducts/Addproducts";
 import Addreviews from "./Pages/Dashboard/Addreviews/Addreviews";
+import AdminRoute from "./Pages/Dashboard/AdminRoute/AdminRoute";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Makeadmin from "./Pages/Dashboard/Makeadmin/Makeadmin";
 import Manageallorders from "./Pages/Dashboard/Manageallorders/Manageallorders";
@@ -24,10 +25,10 @@ function App() {
        <Route path="/register" element={<Register />} />
        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
           <Route exact path="/dashboard" element={<Myorders />} />
-          <Route path={`/dashboard/addproduct`} element={<Addproducts />} />
+          <Route path={`/dashboard/addproduct`} element={<AdminRoute><Addproducts /></AdminRoute>} />
           <Route path={`/dashboard/addreview`} element={<Addreviews />}/>
-          <Route path={`/dashboard/makeadmin`} element={<Makeadmin />}/>
-          <Route path={`/dashboard/manageallorders`} element={<Manageallorders />}/>
+          <Route path={`/dashboard/makeadmin`} element={<AdminRoute><Makeadmin /></AdminRoute>}/>
+          <Route path={`/dashboard/manageallorders`} element={<AdminRoute><Manageallorders /></AdminRoute>}/>
        </Route>
        </Routes>
      </Router>

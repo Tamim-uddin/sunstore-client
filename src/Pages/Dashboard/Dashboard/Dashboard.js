@@ -14,13 +14,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Outlet, Link } from "react-router-dom";
 import { Button } from '@mui/material';
+import useAuth from '../../../hook/useAuth';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const {admin} = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -31,10 +32,17 @@ function Dashboard(props) {
       <Divider />
       <Link to="/home"><Button color='inherit'>Home</Button></Link> <br />
       <Link to={`/dashboard`}><Button color='inherit'>My Orders</Button></Link><br />
-      <Link to={`/dashboard/addproduct`}><Button color='inherit'>Add Product</Button></Link><br />
+      {admin && 
+        <Box>
+            <Link to={`/dashboard/addproduct`}><Button color='inherit'>Add Product</Button></Link><br />
+            <Link to={`/dashboard/manageallorders`}><Button color='inherit'>Manage Orders</Button></Link>
+            <Link to={`/dashboard/makeadmin`}><Button color='inherit'>Make admin</Button></Link> <br />
+        </Box>
+      }
+     
       <Link to={`/dashboard/addreview`}><Button color='inherit'>Add Review</Button></Link><br />
-      <Link to={`/dashboard/makeadmin`}><Button color='inherit'>Make admin</Button></Link> <br />
-      <Link to={`/dashboard/manageallorders`}><Button color='inherit'>Manage All Orders</Button></Link>
+      
+     
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>

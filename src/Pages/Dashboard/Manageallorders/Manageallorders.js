@@ -1,10 +1,23 @@
-import React from 'react';
+import { Grid } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import Manageallorder from '../Manageallorder/Manageallorder';
 
 const Manageallorders = () => {
+ const [allbookings, setallbookings] = useState([]); 
+ useEffect( () => {
+     fetch('http://localhost:5000/bookings')
+     .then(res => res.json())
+     .then(data => setallbookings(data) )
+ } , [])  
     return (
-        <div>
-            <h2>this is from make admin</h2>
-        </div>
+        <>
+            <h2>this is from all orders {allbookings.length}</h2>
+            <Grid container spacing={2}>
+            {
+                allbookings.map(allbooking => <Manageallorder key={allbooking._id} allbooking={allbooking} setallbookings={setallbookings} allbookings={allbookings}></Manageallorder>)
+            }
+            </Grid>
+            </>
     );
 };
 

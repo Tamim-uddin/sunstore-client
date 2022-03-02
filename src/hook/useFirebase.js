@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
 
@@ -11,6 +11,7 @@ const useFirebase = () => {
     const [user, setuser] = useState({});
     const [isloading, setisloading] = useState(true);
     const [error, seterror] = useState('');
+    const [admin, setadmin] = useState(true);
 
 const Googleprovider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -24,6 +25,7 @@ const auth = getAuth();
             const redierect_uri = location.state?.from || '/';
             navigate(redierect_uri);
             seterror('');
+            saveUser(user.email, user.displayName, 'PUT');
         })
         .catch((error) => {
             seterror(error.message);
@@ -36,6 +38,15 @@ const auth = getAuth();
         setisloading(true);
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            const newUser = {email, displayName: name}
+            setuser(newUser);
+            saveUser(email, name, 'POST');
+            updateProfile(auth.currentUser, {
+                displayName: name
+              }).then(() => {
+              }).catch((error) => {
+              });
+              
             const user = userCredential.user;
 
             navigate('/');
@@ -91,8 +102,30 @@ const auth = getAuth();
           .finally(() => setisloading(false));
     }
 
+    // saved user
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users' , {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then();
+    }
+
+    // secure admin
+    useEffect( () => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+        .then(res => res.json())
+        .then(data => setadmin(data.admin))
+    } , [user.email])
+
+
     return {
         user,
+        admin,
         signinwithgoogle,
         register,
         login,
