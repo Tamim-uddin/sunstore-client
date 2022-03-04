@@ -42,7 +42,7 @@ const BookingModal = ({openBooking, handleBookingClose, product}) => {
             productName: name,
             price
         }
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://stark-gorge-54734.herokuapp.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ const Manageallorder = ({allbooking, allbookings, setallbookings}) => {
     const {_id, clientName, email, productName, price} = allbooking;
 
     const handleDelete = id => {
-        const uri = `http://localhost:5000/bookings/${id}`
+        const uri = `https://stark-gorge-54734.herokuapp.com/bookings/${id}`
         fetch(uri, {
             method: 'DELETE'
         })

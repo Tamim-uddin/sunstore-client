@@ -8,7 +8,7 @@ const Addreviews = () => {
     const onSubmit = data => {
         console.log(data);
 
-            axios.post('http://localhost:5000/reviews', data)
+            axios.post('https://stark-gorge-54734.herokuapp.com/reviews', data)
             .then(res => {
                 console.log(res)
             });

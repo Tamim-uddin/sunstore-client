@@ -7,10 +7,10 @@ const Myorders = () => {
     const [bookings, setbookings] = useState([]);
     const {user} = useAuth()
     useEffect( () => {
-        fetch(`http://localhost:5000/bookings?email=${user.email}`)
+        fetch(`https://stark-gorge-54734.herokuapp.com/bookings?email=${user.email}`)
         .then(res => res.json())
         .then(data => setbookings(data))
-    } , [])
+    } , [user.email])
     return (
         <div>
             <h2>this is my orders {bookings.length}</h2>

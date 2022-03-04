@@ -5,7 +5,7 @@ import Manageallorder from '../Manageallorder/Manageallorder';
 const Manageallorders = () => {
  const [allbookings, setallbookings] = useState([]); 
  useEffect( () => {
-     fetch('http://localhost:5000/bookings')
+     fetch('https://stark-gorge-54734.herokuapp.com/bookings/admin')
      .then(res => res.json())
      .then(data => setallbookings(data) )
  } , [])  
