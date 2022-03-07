@@ -12,8 +12,10 @@ const Reviews = () => {
     } , [])
     return (
         <>
-            <Typography variant="h3" gutterBottom component="div" sx={{ mt: '50px'}}>
-                    Testimonial
+              <Typography className='container-mider'  variant="h3" gutterBottom component="div" sx={{ fontFamily: 'Montserrat,sans-serif', color: '#303030', fontWeight: '500', mt: '60px'}}>
+            What Client 
+            <span style={{color: '#614051', fontWeight: '900', fontFamily: 'Montserrat,sans-serif', fontSize: '50px'}}> Say</span> 
+          
             </Typography>
             <Grid container spacing={2}>
                 {

@@ -6,7 +6,7 @@
 @media screen and (max-width: 800px) {
     .responsive {
         padding: 0px 10px;
-        
+        font-size: 8px;
     }
     .responsive img {
         width: 100%;

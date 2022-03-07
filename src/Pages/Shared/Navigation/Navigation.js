@@ -19,7 +19,7 @@ const Navigation = () => {
     return (
         <div>
              <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{backgroundColor: '#F5F5F5', color: '#614051'}}>
+      <AppBar position="static" sx={{backgroundColor: 'white', color: '#614051'}}>
         <Toolbar>
          
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'Comic Sans MS', fontSize: '25px', textAlign:'left' }}>

@@ -54,7 +54,7 @@ const Glasses = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
             <Typography  className='sunglasses' style={{marginTop: 90, fontFamily: 'Lucida Handwriting'}} variant="h2" gutterBottom component="div">
-                M<span style={{color: '#614051'}}>EN'S</span> <br /><span style={{color: '#614051'}}>S</span>UN<span style={{color: '#614051'}}>GLA</span>SSE<span style={{color: '#614051'}}>S</span> <br />
+                M<span style={{color: '#614051'}}>EN'</span> <br /><span style={{color: '#614051'}}>S</span>UN<span style={{color: '#614051'}}>GLA</span>SSE<span style={{color: '#614051'}}>S</span> <br />
                 <Button sx={{fontWeight: 400, fontSize: 15, color: '#231F23'}} variant="text">Shop Now</Button>
             </Typography>
             </Grid>
