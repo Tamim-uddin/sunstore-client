@@ -43,7 +43,7 @@ const Login = () => {
                 <Grid xs={12} sm={12} md={6}>
                         <img style={{width: '100%'}} src={banner6} alt='' />
                     </Grid>
-            <Paper elevation={10} style={{padding: '20px', height: '70vh', width: 280, margin: 'auto',  border: '1px solid #614051', marginTop: '30px'}}>
+            <Paper elevation={10} style={{padding: '20px', height: '70vh', width: 320, margin: 'auto',  border: '1px solid #614051', marginTop: '30px'}}>
             <Grid xs={12} sm={12} md={12} align="center">
             <Avatar sx={{backgroundColor: '#614051', mt: '20px'}}><LockOutlinedIcon /></Avatar>
             <h1 style={{fontFamily:'"Playfair Display",serif', marginTop: '20px', color:'#303030'}}>Please Login</h1>

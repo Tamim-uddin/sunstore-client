@@ -5,6 +5,8 @@ import Addproducts from "./Pages/Dashboard/Addproducts/Addproducts";
 import Addreviews from "./Pages/Dashboard/Addreviews/Addreviews";
 import AdminRoute from "./Pages/Dashboard/AdminRoute/AdminRoute";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import DashboardHome from "./Pages/Dashboard/Dashboard/DashboardHome/DashboardHome";
+import DashboardH from "./Pages/Dashboard/DashboardH/DashboardH";
 import Makeadmin from "./Pages/Dashboard/Makeadmin/Makeadmin";
 import Manageallorders from "./Pages/Dashboard/Manageallorders/Manageallorders";
 import Myorders from "./Pages/Dashboard/MyOrders/Myorders";
@@ -24,7 +26,9 @@ function App() {
        <Route path="/login" element={<Login />}/>
        <Route path="/register" element={<Register />} />
        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
-          <Route exact path="/dashboard" element={<Myorders />} />
+         
+          <Route exact path="/dashboard" element={<DashboardH />} />
+          <Route exact path="/dashboard/myorders" element={<Myorders />} />
           <Route path={`/dashboard/addproduct`} element={<AdminRoute><Addproducts /></AdminRoute>} />
           <Route path={`/dashboard/addreview`} element={<Addreviews />}/>
           <Route path={`/dashboard/makeadmin`} element={<AdminRoute><Makeadmin /></AdminRoute>}/>

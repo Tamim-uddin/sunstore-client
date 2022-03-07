@@ -15,32 +15,43 @@ import Typography from '@mui/material/Typography';
 import { Outlet, Link } from "react-router-dom";
 import { Button } from '@mui/material';
 import useAuth from '../../../hook/useAuth';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {admin} = useAuth();
+  const {admin, user} = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   const drawer = (
-    <div>
+    <div style={{textAlign: 'left', marginLeft: '10px'}}>
       <Toolbar />
-      <Divider />
-      <Link to="/home"><Button color='inherit'>Home</Button></Link> <br />
-      <Link to={`/dashboard`}><Button color='inherit'>My Orders</Button></Link><br />
+      
+      <Link style={{textDecoration: 'none', color: '#614051'}} to="/home"><Button color='inherit' sx={{fontSize: '15px' ,fontFamily: 'Bahnschrift', fontWeight: '600px', marginTop: '50px'}}><HomeOutlinedIcon  sx={{mr: '30px'}}/>Home</Button></Link> <br />
+      <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><DashboardCustomizeOutlinedIcon sx={{mr: '30px'}}/>Dashboard</Button></Link><br />
+
+      
+      <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/myorders`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><BookmarkBorderOutlinedIcon sx={{mr: '30px'}}/>My Orders</Button></Link><br />
       {admin && 
         <Box>
-            <Link to={`/dashboard/addproduct`}><Button color='inherit'>Add Product</Button></Link><br />
-            <Link to={`/dashboard/manageallorders`}><Button color='inherit'>Manage Orders</Button></Link>
-            <Link to={`/dashboard/makeadmin`}><Button color='inherit'>Make admin</Button></Link> <br />
+            <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/addproduct`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><AddBoxOutlinedIcon sx={{mr: '30px'}}/>Add Product</Button></Link><br />
+            <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/manageallorders`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><ManageAccountsOutlinedIcon sx={{mr: '30px'}}/>Manage Orders</Button></Link>
+            <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/makeadmin`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><PersonAddAltOutlinedIcon sx={{mr: '30px'}}/>Make admin</Button></Link> <br />
         </Box>
       }
      
-      <Link to={`/dashboard/addreview`}><Button color='inherit'>Add Review</Button></Link><br />
+      <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/addreview`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><AddCommentOutlinedIcon sx={{mr: '30px'}}/>Add Review</Button></Link><br />
+    
       
      
       
@@ -65,13 +76,14 @@ function Dashboard(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }}}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" sx={{color: '#614051', fontFamily: 'Comic Sans MS', fontSize: '25px'}}>
             Dashboard
           </Typography>
+          
         </Toolbar>
       </AppBar>
       <Box
