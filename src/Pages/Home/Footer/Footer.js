@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <Box sx={{backgroundColor: '#F5F5F5', p: 10}}>
+        <Box sx={{backgroundColor: '#F5F5F5', p: 10, mt: '50px'}}>
             <Grid container spacing={2}>
                 <Grid item xs={6} md={3}>
                     <Typography variant="h5" gutterBottom component="div">

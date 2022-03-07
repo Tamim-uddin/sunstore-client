@@ -20,8 +20,8 @@ const Myorder = ({booking,setbookings,bookings}) => {
         })
     }
     return (
-        <Container>
-            <Grid item xs={6} md={12}>
+        
+            <Grid item xs={6} sm={6} md={4}>
                 <Card sx={{ minWidth: 250, backgroundColor: '#F5F5F5', my: 2}}>
                         <CardContent>
                             
@@ -39,11 +39,11 @@ const Myorder = ({booking,setbookings,bookings}) => {
                             </Typography>
                         </CardContent>
                         
-                            <Button onClick={() => handleDelete(_id)} sx={{backgroundColor: 'goldenrod', color: 'white', mb:2}} size="small">Delete</Button>
+                            <Button onClick={() => handleDelete(_id)} sx={{backgroundColor: '#614051', color: 'white', mb:2}} size="small">Delete</Button>
                         
                 </Card>
             </Grid>
-        </Container>
+    
     );
 };
 

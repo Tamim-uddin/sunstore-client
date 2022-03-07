@@ -43,14 +43,7 @@ function Dashboard(props) {
       <Link to={`/dashboard/addreview`}><Button color='inherit'>Add Review</Button></Link><br />
       
      
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-           
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      
     </div>
   );
 
@@ -63,7 +56,7 @@ function Dashboard(props) {
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          ml: { sm: `${drawerWidth}px` }, backgroundColor: 'white'
         }}
       >
         <Toolbar>
@@ -76,7 +69,7 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{color: '#614051', fontFamily: 'Comic Sans MS', fontSize: '25px'}}>
             Dashboard
           </Typography>
         </Toolbar>

@@ -1,8 +1,10 @@
-import { Alert, Box, Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Avatar, Box, Button, CircularProgress, Grid, Paper, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hook/useAuth';
+import banner6 from '../../../Image/Background/bg6.jpg';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 
 const Register = () => {
@@ -34,45 +36,49 @@ const Register = () => {
     
     return (
         <Box>
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={6} sx={{mt: '150px', textAlign: 'center'}}>
-                    <Typography variant="h3" gutterBottom component="div">
-                        Please Register
-                    </Typography>
+            <Grid container spacing={2}  sx={{mt: '40px'}}>
+            <Grid xs={12} sm={12} md={6}>
+                        <img style={{width: '100%'}} src={banner6} alt='' />
+                    </Grid>
+                    <Paper elevation={10} style={{padding: '20px', height: '75vh', width: 320, margin: 'auto',  border: '1px solid #614051', marginTop: '30px'}}>
+            <Grid xs={12} sm={12} md={12} align="center">
+            <Avatar sx={{backgroundColor: '#614051', mt: '20px'}}><LockOutlinedIcon /></Avatar>
+            <h1 style={{fontFamily:'"Playfair Display",serif', marginTop: '20px', color:'#303030'}}>Please Register</h1>
                     <form onSubmit={handleOnSubmit}>
                     <TextField 
-                    sx={{width: '75%'}}
+                    fullWidth
                     label="Your Name" 
                     name="name"
                     onBlur={handleOnBlur}
                     variant="standard" /> <br />
                     <TextField 
-                    sx={{width: '75%'}}
+                    fullWidth
                     label="Your Email" 
                     name="email"
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" /> <br />
                     <TextField 
-                    sx={{width: '60%'}}
+                    fullWidth
                     label="Your Password" 
                     name="password"
                     type="password"
                     onBlur={handleOnBlur}
                     variant="standard" /> <br />
                     <TextField 
-                    sx={{width: '45%', mb: '5px'}}
+                    fullWidth
                     label="Retype Password" 
                     name="password2"
                     type="password"
                     onBlur={handleOnBlur}
                     variant="standard" /> <br />
-                    <Button type='submit' variant='contained'  >Sign Up <ExitToAppRoundedIcon sx={{fontSize: 'medium', ml: '5px'}}/></Button><br />
-                    <NavLink to="/login">Already Register?Please LogIn</NavLink>
-                    </form> <br />
+                    <Button type='submit' variant='contained' sx={{fontSize: 'medium', backgroundColor: '#614051', mt: '5px'}}>Sign Up <ExitToAppRoundedIcon sx={{fontSize: 'medium', ml: '5px'}}/></Button><br />
+                    </form>
+                    <NavLink to="/login" style={{color: '#614051'}}>Already Register?Please LogIn</NavLink> 
+                </Grid>
+                </Paper>
                     {user.email && <Alert severity="success" sx={{width: '75%'}}>Successfully Register</Alert>};
                     {error && <Alert severity="error" sx={{width: '75%'}}>{error}</Alert>}
-                </Grid>
             </Grid>
         </Box>
     );

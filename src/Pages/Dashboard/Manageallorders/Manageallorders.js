@@ -11,8 +11,8 @@ const Manageallorders = () => {
  } , [])  
     return (
         <>
-            <h2>this is from all orders {allbookings.length}</h2>
-            <Grid container spacing={2}>
+            <h2 style={{fontFamily:'"Playfair Display",serif', color:'#303030'}}>My Orders {allbookings.length}</h2>
+            <Grid container spacing={1}>
             {
                 allbookings.map(allbooking => <Manageallorder key={allbooking._id} allbooking={allbooking} setallbookings={setallbookings} allbookings={allbookings}></Manageallorder>)
             }
