@@ -4,8 +4,8 @@ import React from 'react';
 const Review = ({review}) => {
     const {name, email, des} = review;
     return (
-        <Grid item xs={12} md={4}>
-                <Container sx={{ml: 6, py: 3, mb: 10}}>
+        <Grid item xs={12} sm={4} md={4}>
+                <Container sx={{ py: 3}}>
                     <Card sx={{ minWidth: 275 }}>
                     <CardContent>
                         <Typography variant="h5" component="div">

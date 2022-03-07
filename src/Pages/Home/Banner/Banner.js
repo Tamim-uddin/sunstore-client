@@ -1,18 +1,21 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import banner1 from '../../../Image/banner/banner1.jpg'
-import banner2 from '../../../Image/banner/banner2.jpg'
-import banner4 from '../../../Image/banner/banner4.jpg'
+import banner8 from '../../../Image/banner/banner8.jpg'
+import banner9 from '../../../Image/banner/banner9.jpg'
+import banner7 from '../../../Image/banner/banner7.jpg'
 import './Banner.css';
 
 const Banner = () => {
+  <meta name='viewport' content='width=device-width,initial-scale-1.0' />
+
     return (
-        
+
+      <div className="banners responsive">
         <Carousel className='banner'>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src={banner1}
+      className='img-fluid'
+      src={banner8}
       alt="First slide"
     />
     <Carousel.Caption>
@@ -22,8 +25,8 @@ const Banner = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src={banner2}
+      className='img-fluid'
+      src={banner9}
       alt="Second slide"
     />
 
@@ -34,8 +37,8 @@ const Banner = () => {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src={banner4}
+      className='img-fluid'
+      src={banner7}
       alt="Third slide"
     />
 
@@ -45,6 +48,7 @@ const Banner = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+</div>
         
     );
 };

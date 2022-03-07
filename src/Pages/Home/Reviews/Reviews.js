@@ -1,4 +1,5 @@
-import { Grid, Typography } from '@mui/material';
+import { Translate } from '@mui/icons-material';
+import { Box, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Review from '../Review/Review';
 
@@ -10,7 +11,7 @@ const Reviews = () => {
         .then(data => setreviews( data))
     } , [])
     return (
-        <div>
+        <>
             <Typography variant="h3" gutterBottom component="div" sx={{ mt: '50px'}}>
                     Testimonial
             </Typography>
@@ -21,7 +22,7 @@ const Reviews = () => {
             </Grid>
 
 
-        </div>
+        </>
     );
 };
 

@@ -79,13 +79,15 @@ const BookingModal = ({openBooking, handleBookingClose, product}) => {
           <form onSubmit={handleonSubmit}>
           <TextField 
           sx={{my:2}}
+          fullWidth
           label="Name"
           defaultValue={user.displayName}
           name="clientName"
           onBlur={handleonBlur}
           variant="standard" />
           <TextField 
-          sx={{my:2}}           
+          sx={{my:2}} 
+          fullWidth          
           label="Email"
           defaultValue={user.email}
           name="email"
@@ -93,6 +95,7 @@ const BookingModal = ({openBooking, handleBookingClose, product}) => {
           variant="standard" />
           <TextField 
           sx={{my:2}}
+          fullWidth
           disabled
           label="Price"
           defaultValue={price}

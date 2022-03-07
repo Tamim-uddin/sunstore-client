@@ -1,0 +1,11 @@
+.sunglasses {
+    margin-top: 90px;
+    font-family: 'Lucida Handwriting';
+    
+}
+
+@media screen and (max-width: 800px) {
+    .sunglasses {
+        margin-top: 5px;
+    }
+}

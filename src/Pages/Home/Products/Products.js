@@ -12,11 +12,12 @@ const Products = () => {
         .then(data => setproducts(data))
     } , [])
     return (
-        <div>
-             <Typography variant="h3" gutterBottom component="div" sx={{ mt: '50px'}}>
-                    Special Offers and Promotion
+        <div style={{marginTop: '150px'}}>
+              <Typography className='container-mider'  variant="h3" gutterBottom component="div" sx={{textAlign: 'center', fontFamily: 'Montserrat,sans-serif', color: '#303030', fontWeight: '500'}}>
+            SPecial  <span style={{color: '#000', fontWeight: '900', fontFamily: 'Montserrat,sans-serif', fontSize: '50px'}}> Offers </span>  
+            and <br />Promotion
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={1}>
                 {
                    products.map(product => <Product key={product._id} product={product}></Product>)
                 }
@@ -26,3 +27,4 @@ const Products = () => {
 };
 
 export default Products;
+
