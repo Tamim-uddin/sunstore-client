@@ -12,6 +12,7 @@ import { BsMinecart } from 'react-icons/bs';
 import DoNotDisturbOnTotalSilenceOutlinedIcon from '@mui/icons-material/DoNotDisturbOnTotalSilenceOutlined';
 import { GiMoneyStack } from 'react-icons/gi';
 import { RiExchangeDollarFill } from 'react-icons/ri';
+import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined';
 import useAuth from '../../../hook/useAuth';
 import './DashboardH.css';
 
@@ -102,11 +103,11 @@ const DashboardH = () => {
                                 <Grid item xs={6} md={4} sx={{backgroundColor: '#FFFFF0', borderRadius:'25px', textAlign: 'left'}}> 
                                 <Grid container spacing={2}>
                                 <Grid item xs={6} md={8}>
-                                    <p><span style={{fontWeight: 800, fontSize: '20px'}}>Visits</span><br /><span style={{fontSize: '12px'}}>Total Visit Today</span><br />
-                                    <span style={{fontWeight: 800, fontSize: '20px'}}>400</span></p>
+                                    <p><span style={{fontWeight: 800, fontSize: '20px'}}>Admins</span><br /><span style={{fontSize: '12px'}}>Total Admin</span><br />
+                                    <span style={{fontWeight: 800, fontSize: '20px'}}>07</span></p>
                                     </Grid>
                                 <Grid item xs={6} md={4}>
-                                    <TravelExploreIcon style={{fontSize: '50px', marginTop: '10px'}}/>
+                                    <AdminPanelSettingsOutlinedIcon style={{fontSize: '50px', marginTop: '10px'}}/>
                                     </Grid>
                                     </Grid>
                                 </Grid>
@@ -150,7 +151,7 @@ const DashboardH = () => {
 
                                 <Grid container spacing={2} sx={{p: '0px', lineHeight: '1px'}}>
                                     <Grid item xs={7} md={7}>
-                                    <p><span style={{fontWeight: 500, fontSize: '15px'}}>Occulus LTM. Company</span></p>  
+                                    <p><span style={{fontWeight: 500, fontSize: '15px'}}>Occulus LMT. Company</span></p>  
                                     </Grid>
                                     <Grid item xs={5} md={5} >
                                     <p><span style={{fontWeight: 600, fontSize: '20px'}}>$820</span></p>

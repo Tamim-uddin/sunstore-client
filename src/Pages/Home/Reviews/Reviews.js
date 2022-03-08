@@ -5,6 +5,7 @@ import Review from '../Review/Review';
 
 const Reviews = () => {
     const [reviews, setreviews] = useState([]);
+    <meta name='viewport' content='width=device-width,initial-scale-1.0' />
     useEffect( () => {
         fetch('https://stark-gorge-54734.herokuapp.com/reviews')
         .then(res => res.json())
@@ -17,7 +18,7 @@ const Reviews = () => {
             <span style={{color: '#614051', fontWeight: '900', fontFamily: 'Montserrat,sans-serif', fontSize: '50px'}}> Say</span> 
           
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{mt: '20px'}} className='responsive'>
                 {
                     reviews.map(review => <Review key={review.name} review={review}></Review>)
                 }

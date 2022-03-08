@@ -23,7 +23,7 @@ const Manageallorder = ({allbooking, allbookings, setallbookings}) => {
     return (
         
         <Grid item xs={12} sm={6} md={4}>
-            <Card sx={{ minWidth: 250, backgroundColor: '#F5F5F5', my: 2}}>
+            <Card sx={{ minWidth: 250, backgroundColor: '#E6E6FA', my: 2}}>
                     <CardContent>
                         
                         <Typography variant="h5" component="div">
