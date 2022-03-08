@@ -18,7 +18,7 @@ const Reviews = () => {
             <span style={{color: '#614051', fontWeight: '900', fontFamily: 'Montserrat,sans-serif', fontSize: '50px'}}> Say</span> 
           
             </Typography>
-            <Grid container spacing={2} sx={{mt: '20px'}} className='responsive'>
+            <Grid container spacing={2} sx={{mt: '5px'}}>
                 {
                     reviews.map(review => <Review key={review.name} review={review}></Review>)
                 }

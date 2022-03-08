@@ -6,8 +6,11 @@ const Review = ({review}) => {
     const {name, email, des, img} = review;
     
     return (
-        <Grid item xs={12} sm={4} md={4}  sx={{backgroundColor: '#95B9C7', p: '40px'}}>
+        <Grid item xs={12} sm={4} md={4}>
+          
                 <Container sx={{ py: 3}}>
+                <Card sx={{ minWidth: 275, boxShadow: 3 }}>
+                    <CardContent>
                        <img className='img-fluid'  style={{width: '80px', height: '80px', border: '1px solid #804d4d',borderRadius: '50px'}} src={img} alt= ''/>
                         <Typography variant="h5" component="div">
                           {name}
@@ -17,8 +20,11 @@ const Review = ({review}) => {
                         </Typography>
                         <Typography sx={{ mb: 1.5 }} color="text.secondary">
                            {des}
-                        </Typography>                    
+                        </Typography>  
+                    </CardContent>                   
+                </Card>                  
                 </Container>
+              
         </Grid>
     );
 };
