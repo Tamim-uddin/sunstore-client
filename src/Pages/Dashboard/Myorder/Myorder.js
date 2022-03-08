@@ -21,7 +21,7 @@ const Myorder = ({booking,setbookings,bookings}) => {
     }
     return (
         
-            <Grid item xs={6} sm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
                 <Card sx={{ minWidth: 250, backgroundColor: '#F5F5F5', my: 2}}>
                         <CardContent>
                             
