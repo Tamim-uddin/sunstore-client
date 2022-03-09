@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Myorder = ({booking,setbookings,bookings}) => {
     const {_id, clientName, email, productName, price} = booking;
@@ -39,8 +40,14 @@ const Myorder = ({booking,setbookings,bookings}) => {
                             </Typography>
                         </CardContent>
                         
-                            <Button onClick={() => handleDelete(_id)} sx={{backgroundColor: '#614051', color: 'white', mb:2}} size="small">Delete</Button>
-                        
+                            <Button onClick={() => handleDelete(_id)} sx={{backgroundColor: '#614051', color: 'white', mb:2}} size="small">Delete</Button><br />
+                        {
+
+                            booking.payment ? 'paid' 
+                            :
+                            <Link to={`/dashboard/payment/${booking._id}`}><button>Pay</button></Link>
+
+                        }
                 </Card>
             </Grid>
     

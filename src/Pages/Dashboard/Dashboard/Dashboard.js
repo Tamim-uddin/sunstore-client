@@ -22,6 +22,7 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
+import PaymentOutlinedIcon from '@mui/icons-material/PaymentOutlined';
 
 const drawerWidth = 240;
 
@@ -51,6 +52,7 @@ function Dashboard(props) {
       }
      
       <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/addreview`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><AddCommentOutlinedIcon sx={{mr: '30px'}}/>Add Review</Button></Link><br />
+      {/* <Link style={{textDecoration: 'none', color: '#614051'}} to={`/dashboard/payment`}><Button sx={{fontSize: '15px', fontFamily: 'Bahnschrift'}} color='inherit'><PaymentOutlinedIcon sx={{mr: '30px'}}/>Payment</Button></Link><br /> */}
     
       
      

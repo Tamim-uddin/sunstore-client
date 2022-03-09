@@ -10,6 +10,7 @@ import DashboardH from "./Pages/Dashboard/DashboardH/DashboardH";
 import Makeadmin from "./Pages/Dashboard/Makeadmin/Makeadmin";
 import Manageallorders from "./Pages/Dashboard/Manageallorders/Manageallorders";
 import Myorders from "./Pages/Dashboard/MyOrders/Myorders";
+import Payment from "./Pages/Dashboard/Payment/Payment";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
@@ -28,7 +29,9 @@ function App() {
        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
          
           <Route exact path="/dashboard" element={<DashboardH />} />
-          <Route exact path="/dashboard/myorders" element={<Myorders />} />
+          <Route path= {`/dashboard/myorders`} element={<Myorders />} />
+          <Route path= {`/dashboard/payment/:bookingId`} element={<Payment />} />
+         
           <Route path={`/dashboard/addproduct`} element={<AdminRoute><Addproducts /></AdminRoute>} />
           <Route path={`/dashboard/addreview`} element={<Addreviews />}/>
           <Route path={`/dashboard/makeadmin`} element={<AdminRoute><Makeadmin /></AdminRoute>}/>
