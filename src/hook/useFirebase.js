@@ -106,6 +106,7 @@ const auth = getAuth();
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
         fetch('https://stark-gorge-54734.herokuapp.com/users' , {
+            
             method: method,
             headers: {
                 'content-type': 'application/json'

@@ -7,6 +7,7 @@ const Manageallorder = ({allbooking, allbookings, setallbookings}) => {
     const handleDelete = id => {
         const uri = `https://stark-gorge-54734.herokuapp.com/bookings/${id}`
         fetch(uri, {
+            
             method: 'DELETE'
         })
         .then(res => res.json())

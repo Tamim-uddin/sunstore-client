@@ -43,6 +43,7 @@ const BookingModal = ({openBooking, handleBookingClose, product}) => {
             price
         }
         fetch('https://stark-gorge-54734.herokuapp.com/bookings', {
+            
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

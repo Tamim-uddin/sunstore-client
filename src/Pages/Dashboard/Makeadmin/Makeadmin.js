@@ -13,6 +13,7 @@ const Makeadmin = () => {
     const handleonSubmit = e => {
         const user = {email};
         fetch('https://stark-gorge-54734.herokuapp.com/users/admin' , {
+            
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

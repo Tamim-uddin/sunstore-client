@@ -8,6 +8,7 @@ const Myorder = ({booking,setbookings,bookings}) => {
     const handleDelete = id => {
         const uri = `https://stark-gorge-54734.herokuapp.com/bookings/${id}`
         fetch(uri, {
+            
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -43,9 +44,9 @@ const Myorder = ({booking,setbookings,bookings}) => {
                             <Button onClick={() => handleDelete(_id)} sx={{backgroundColor: '#614051', color: 'white', mb:2}} size="small">Delete</Button><br />
                         {
 
-                            booking.payment ? 'paid' 
+                            booking.payment ? <Button sx={{color: 'green'}} variant="text">Paid</Button> 
                             :
-                            <Link to={`/dashboard/payment/${booking._id}`}><button>Pay</button></Link>
+                            <Link  style={{textDecoration: 'none'}} to={`/dashboard/payment/${booking._id}`}><Button sx={{color: '#614051'}} variant="text">Pay</Button></Link>
 
                         }
                 </Card>
